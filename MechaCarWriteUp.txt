@@ -1,0 +1,46 @@
+Module 15 Challenge: Multiple Linear Regression Analysis of MechaCar MPG and Suspension Coil
+Questions to be Answered/Analyzed:
+
+--Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
+The highest level of variance were the ground clearance of the MechaCar and the actual vehicle length indicating a strong non-random variance
+The findings are as follows from my RScript file:
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-19.4701  -4.4994  -0.0692   5.4433  18.5849 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      -1.040e+02  1.585e+01  -6.559 5.08e-08 ***
+vehicle.length    6.267e+00  6.553e-01   9.563 2.60e-12 ***
+vehicle.weight    1.245e-03  6.890e-04   1.807   0.0776 .  
+spoiler.angle     6.877e-02  6.653e-02   1.034   0.3069    
+ground.clearance  3.546e+00  5.412e-01   6.551 5.21e-08 ***
+AWD              -3.411e+00  2.535e+00  -1.346   0.1852    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 8.774 on 44 degrees of freedom
+Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
+F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
+
+--Is the slope of the linear model considered to be zero? 
+The slope is not 0 due to the p-value being 5.35e-11 which is approximately 0.0000000000535 according to my calculator; close to 0, but not 0.
+
+--Does this linear model predict mpg of MechaCar prototypes effectively?
+According to my Statistics Summary for the MechaCar_mpg dataset, the determining value to look for in order to decide if it indeed predicts the mpg of the prototypes correctly is the multiple R-squared value, which is  0.7149 which rounded up from the millionth place is around ~72%. So yes, it predicts it effectively.
+
+In the next portion of the challenge, it wanted me to create a Suspension Coil Summary in R including the mean, median, variance, and Standard Deviation:
+
+1498.78->Mean PSI
+1500->Median PSI
+62.29356->Variance
+7.892627->Standard Deviation
+
+--The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per inch. Does the current manufacturing data meet this design specification? Why or why not?
+Yes, according to my overall summary of the Suspension coils, the variance is clearky below 100 at 62.29356 so it meets specifications. 
+
+--Determine if the suspension coil’s pound-per-inch results are statistically different from the mean population results of 1,500 pounds per inch:
+The suspension coil's mean PSI is 1498.78 which is 1.28 away from 1500 psi with a low SD of 7.89 PSI meaning statistically it is of a negligible amount of difference.
+
+--DESIGN MY OWN STUDY FOR UPPER MANAGEMENT:
+In terms of outperformance of competition, there are a variety of factors that go into play for the MechaCar. I would advise Upper Management to think about the cost of each car and make versions of higher cost and lower cost very similar to how Tesla models their line fo vehicles. At Tesla, they have multiple models of varying costs for different consumer bases. I would advise management gathering the costs of each car at Tesla, scaling the models (by taking into account the amount of hours worked on each model and the amount of money spent on each model to build) to their specifications for the MechaCar, and then pricing accordingly. The types of data needed would be Tesla's mean prices for each model (seeing the percent decrease in prices among their models), getting the mean price of the MechaCar, and designing more and less expensive versions of the base model prototype. The null hypothesis would be if Tesla's mean prices for each model is a XX% differential between each model, so our line of MechaCars should be benchmarked accoringly. The alternative hypothesis would be if Tesla's cars are at the high end of 100,000+ and 40,000 low end, our prices can be lower in each respect and thus attract a portion of the Tesla consumer base to move to our models instead. The statistical tests needed would be finding the standard deviation of the Tesla model prices and the mean prices and benchmarking them accordingly. 
